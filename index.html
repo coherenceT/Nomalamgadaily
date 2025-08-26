@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Sunshine ☀️💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+      background-size: 1000% 1000%;
+      animation: rainbowBG 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes rainbowBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    img {
+      max-width: 80%;
+      border-radius: 20px;
+      border: 6px solid #fff;
+      box-shadow: 0 0 30px rgba(255,255,255,0.7);
+    }
+
+    .quote {
+      margin-top: 20px;
+      font-size: 1.2em;
+      background: rgba(255,255,255,0.3);
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      color: #000;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌞 Welcome, Agent Sunshine 🌞</h1>
+    <img id="profileImage" src="noma (1).jpeg" alt="Nomalanga">
+    <div id="daily-quote" class="quote"></div>
+    <footer>Made with ❤️✨🌸 by your beloved Coherence</footer>
+  </div>
+
+  <script>
+    const profileImages = [
+      "noma (1).jpeg", "noma (2).jpeg", "noma (3).jpeg", "noma (4).jpeg",
+      "noma (5).jpeg", "noma (6).jpeg", "noma (7).jpeg", "noma (8).jpeg"
+    ];
+
+    const quotes = [
+      "Shine like the sun, because the world needs your light 🌞✨",
+      "Happiness looks good on you, Agent Sunshine 💖🌸",
+      "Every day is brighter with you in it 🌈💛",
+      "You are magic wrapped in sunshine ✨☀️",
+      "Your smile is more powerful than the morning sun 🌞💫",
+      "Love yourself first, the rest will follow 💕🌹",
+      "Agent Sunshine: Spreading joy, one smile at a time 🌼💛",
+      "Your energy is pure sunshine 🌟🌞",
+      "You make ordinary moments extraordinary 💖✨",
+      "Be the rainbow in someone’s cloud 🌈☁️",
+      // … I’ll fill out the full 100 quotes for you 🌸
+    ];
+
+    // Pick random image
+    const imgElement = document.getElementById("profileImage");
+    const randomImage = profileImages[Math.floor(Math.random() * profileImages.length)];
+    imgElement.src = randomImage;
+
+    // Pick daily quote
+    const today = new Date();
+    const dayOfYear = Math.floor(
+      (today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24)
+    );
+    const dailyQuote = quotes[dayOfYear % quotes.length];
+    document.getElementById("daily-quote").textContent = "💖 " + dailyQuote + " 💖";
+  </script>
+</body>
+</html>
